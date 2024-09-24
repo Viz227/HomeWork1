@@ -1,0 +1,31 @@
+using System;
+namespace Test1
+class Program
+{
+    static void Main(string[] args)
+    {
+        
+        int n = int.Parse(Console.ReadLine());
+        
+       
+        string[] input = Console.ReadLine().Split();
+        int[] array = Array.ConvertAll(input, int.Parse);
+
+       
+        if (n > 1)
+        {
+            
+            int lastElement = array[n - 1];
+            
+
+            for (int i = n - 1; i > 0; i--)
+            {
+                array[i] = array[i - 1];
+            }
+           
+            array[0] = lastElement;
+        }
+    
+        Console.WriteLine(string.Join(" ", array));
+    }
+}
