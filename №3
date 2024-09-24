@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+namespace Test1;
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Чтение количества элементов
+        int n = int.Parse(Console.ReadLine());
+
+        // Чтение массива
+        string[] input = Console.ReadLine().Split();
+        int[] array = Array.ConvertAll(input, int.Parse);
+
+        // Проверка, что массив содержит более одного элемента
+        if (n < 2)
+        {
+            return; // Если элементов меньше 2, не будет пар для сравнения
+        }
+
+        // Переменная для хранения результата
+        List<int> result = new List<int>();
+
+        // Начинаем с элемента 1 и сравниваем его с предыдущим
+        for (int i = 1; i < n; i++)
+        {
+            if (array[i] > array[i - 1]) // Если текущий элемент больше предыдущего
+            {
+                result.Add(array[i]); // Добавляем его в результат
+            }
+        }
+
+        // Проверяем, есть ли результаты для вывода
+        if (result.Count > 0)
+        {
+            // Вывод результата
+            Console.WriteLine(string.Join(" ", result));
+        }
+    }
+}
