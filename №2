@@ -1,0 +1,35 @@
+using System;
+namespace Test1;
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Чтение количества элементов
+        int n = int.Parse(Console.ReadLine());
+
+        // Чтение массива
+        string[] input = Console.ReadLine().Split();
+        int[] array = Array.ConvertAll(input, int.Parse);
+
+        // Проверка, что массив не пуст
+        if (n == 0)
+        {
+            Console.WriteLine(0);
+            return;
+        }
+
+        // Подсчет уникальных элементов
+        int uniqueCount = 1; // потому что первый элемент всегда уникален
+
+        for (int i = 1; i < n; i++)
+        {
+            if (array[i] != array[i - 1]) // если текущий элемент не равен предыдущему
+            {
+                uniqueCount++;
+            }
+        }
+
+        // Вывод результата
+        Console.WriteLine(uniqueCount);
+    }
+}
