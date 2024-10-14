@@ -1,0 +1,26 @@
+using System;
+
+internal class Program
+{
+    private static double Otvet(double num1)
+    {
+        double x = num1 % 2;
+        if (x > 0)
+        {
+            Console.WriteLine("Нечётное");
+        }
+        else
+        {
+            Console.WriteLine("чётное");
+        }
+        return x;
+    }
+
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Введите первое число");
+        double a = Convert.ToInt32(Console.ReadLine());
+
+        Otvet(a);
+    }
+}
