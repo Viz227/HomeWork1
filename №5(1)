@@ -1,0 +1,21 @@
+using System;
+
+internal class Program
+{
+    private static double Otvet(double num1, double num2)
+    {
+        double x = num2 + num1;
+        Console.WriteLine("Ответ:" + x);
+        return x;
+    }
+
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Введите первое число");
+        double a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите первое число 2");
+        double b = Convert.ToInt32(Console.ReadLine());
+
+        Otvet(a, b);
+    }
+}
